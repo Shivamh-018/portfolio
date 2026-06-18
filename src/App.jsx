@@ -388,9 +388,16 @@ function App() {
        <h3 className="text-xl font-semibold text-purple-400">
           Github
         </h3>
-      <p className="text-gray-300">
-          github.com/Shivamh-018
-        </p>
+     <p> <a
+      href="https://github.com/Shivamh-018L"
+      target="_blank"
+      rel="noreferrer"
+      className="text-blue-400 hover:underline"
+    >
+      github.com/Shivamh-018
+    </a>
+          
+      </p>  
       </div>
 
       <div>
