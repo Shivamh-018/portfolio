@@ -1,8 +1,39 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+import React, { useState, useRef } from "react";
+import {
+  FaBars,
+  FaTimes,
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+} from "react-icons/fa";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const form = useRef();
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      "service_2pai72s",
+      "template_c9lhlcq",
+      form.current,
+      "SWk7J1xrW_6tkP-HN"
+    )
+    .then(
+      () => {
+        alert("Message Sent Successfully ✅");
+      },
+      (error) => {
+        alert("Failed to send message ❌");
+        console.log(error);
+      }
+    );
+
+  e.target.reset();
+};
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
 
@@ -32,7 +63,7 @@ function App() {
 
   {/* Desktop Menu */}
   <div className="hidden md:flex gap-8 text-lg">
-    <a href="#" className="hover:text-blue-400 transition">
+    <a href="home" className="hover:text-blue-400 transition">
       Home
     </a>
 
@@ -65,7 +96,7 @@ function App() {
   <div className="absolute top-20 right-0 w-52 bg-gray-900 border border-gray-800 rounded-xl shadow-2xl p-5 flex flex-col gap-5 text-center z-50">
 
     <a
-      href="#"
+      href="#home"
       onClick={() => setMenuOpen(false)}
       className="hover:text-blue-400 transition duration-300"
     >
@@ -109,8 +140,11 @@ function App() {
 </nav>
 
         {/* Hero Section */}
-        <section className="grid md:grid-cols-2 items-center min-h-[80vh] gap-10">
+        <section id="home" className="grid md:grid-cols-2 items-center min-h-[80vh] gap-10">
           
+  
+  
+
           {/* Left Side */}
           <div>
 
@@ -133,7 +167,8 @@ function App() {
             </p>
 
             <div className="mt-8 flex gap-4 flex-wrap">
-       <div className="mt-8 flex gap-4 flex-wrap">
+        <div className="mt-8 flex gap-4 flex-wrap">
+       
        
 
   <a
@@ -157,13 +192,48 @@ function App() {
   >
     Download Resume
   </a>
+  <a
+  href="https://www.linkedin.com/in/shivam-honrao018/"
+  target="_blank"
+  rel="noreferrer"
+  className="bg-blue-700 hover:bg-blue-800 px-6 py-3 rounded-lg transition duration-300"
+>
+  LinkedIn
+</a><div className="flex gap-6 mt-6 text-3xl">
 
+  <a
+    href="https://github.com/Shivamh-018"
+    target="_blank"
+    rel="noreferrer"
+    className="text-gray-400 hover:text-white"
+  >
+    <FaGithub />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/shivam-honrao018/"
+    target="_blank"
+    rel="noreferrer"
+    className="text-blue-400 hover:text-blue-500"
+  >
+    <FaLinkedin />
+  </a>
+
+  <a
+    href="mailto:shivamhonrao5580@gmail.com"
+    className="text-red-400 hover:text-red-500"
+  >
+    <FaEnvelope />
+  </a>
+
+   </div>
+</div>
+
+</div>
 </div>
 
 
-            </div>
 
-          </div>
 
           {/* Right Side */}
           <div className="flex justify-center">
@@ -177,8 +247,12 @@ function App() {
             </div>
 
           </div>
+          
+       
 
         </section>
+
+
         {/* About Section */}
 
 <section id="about" className="py-24 scroll-mt-24">
@@ -405,75 +479,108 @@ function App() {
     Contact Me
   </h2>
 
-  <div className="max-w-3xl mx-auto bg-gray-900 p-10 rounded-2xl">
+  <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
 
-    <div className="space-y-6">
+    {/* Left Side */}
 
-      <div>
-        <h3 className="text-xl font-semibold text-blue-400">
-          Name
-        </h3>
+    <div className="bg-gray-900 p-8 rounded-2xl">
 
-        <p className="text-gray-300">
-          Shivam Honrao
-        </p>
-      </div>
+      <h3 className="text-2xl font-bold text-blue-400 mb-6">
+        Let's Connect
+      </h3>
 
-      <div>
-        <h3 className="text-xl font-semibold text-green-400">
-          Role
-        </h3>
+      <div className="space-y-5">
 
-        <p className="text-gray-300">
-          Java Full Stack Developer
-        </p>
-      </div>
+        <div>
+          <p className="text-gray-400">Name</p>
+          <p className="text-white font-semibold">
+            Shivam Honrao
+          </p>
+        </div>
 
-      <div>
-        <h3 className="text-xl font-semibold text-purple-400">
-          Email
-        </h3>
+        <div>
+          <p className="text-gray-400">Email</p>
+          <p className="text-white font-semibold">
+            shivamhonrao5580@gmail.com
+          </p>
+        </div>
+         <div>
+  <p className="text-gray-400">LinkedIn</p>
 
-        <p className="text-gray-300">
-          shivamhonrao5580@gmail.com
-        </p>
-      </div>
-      <div>
-                <h3 className="text-purple-400 text-xl font-semibold">GitHub</h3>
-                <a
-                  href="https://github.com/Shivamh-018"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-blue-400 hover:underline"
-                >
-                  github.com/Shivamh-018
-                </a>
-              </div>
+  <a
+    href="https://www.linkedin.com/in/shivam-honrao018/"
+    target="_blank"
+    rel="noreferrer"
+    className="text-blue-400 hover:underline"
+  >
+    linkedin.com/in/shivam-honrao018
+  </a>
+</div>
+        
+        <div>
+          <p className="text-gray-400">GitHub</p>
 
-              <div>
-                <h3 className="text-cyan-400 text-xl font-semibold">LinkedIn</h3>
-                <a
-                  href="https://linkedin.com/in/shivam-honrao-018"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-blue-400 hover:underline"
-                >
-                  linkedin.com/in/shivam-honrao-018
-                </a>
-              </div>
+          <a
+            href="https://github.com/Shivamh-018"
+            target="_blank"
+            rel="noreferrer"
+            className="text-blue-400 hover:underline"
+          >
+            github.com/Shivamh-018
+          </a>
+        </div>
+        <div>
+          <p className="text-gray-400">Location</p>
+          <p className="text-white font-semibold">
+            Pune, Maharashtra, India
+          </p>
+        </div>
 
 
-      <div>
-        <h3 className="text-xl font-semibold text-yellow-400">
-          Location
-        </h3>
-
-        <p className="text-gray-300">
-          Pune, Maharashtra, India
-        </p>
       </div>
 
     </div>
+
+    {/* Right Side Form */}
+
+    <form
+      ref={form}
+      onSubmit={sendEmail}
+      className="bg-gray-900 p-8 rounded-2xl space-y-5"
+    >
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 outline-none"
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 outline-none"
+      />
+
+      <textarea
+        name="message"
+        rows="6"
+        placeholder="Your Message"
+        required
+        className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 outline-none"
+      ></textarea>
+
+      <button
+        type="submit"
+        className="w-full bg-gradient-to-r from-blue-500 to-purple-600 py-3 rounded-lg font-semibold hover:scale-105 transition duration-300"
+      >
+        Send Message 🚀
+      </button>
+
+    </form>
 
   </div>
 
@@ -482,7 +589,7 @@ function App() {
 <footer className="py-8 text-center border-t border-gray-800">
 
   <p className="text-gray-400">
-    © 2026 Shivam Honrao | Java Full Stack Developer
+   © {new Date().getFullYear()} Shivam Honrao | Java Full Stack Developer
   </p>
 
 </footer>
