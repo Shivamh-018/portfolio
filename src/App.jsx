@@ -197,7 +197,7 @@ function App() {
   </div>
 
 </section>
-           {/*Achivements Section*/}
+          
 
 
     {/*Skill Section*/}
@@ -385,37 +385,29 @@ function App() {
         </p>
       </div>
       <div>
-       <h3 className="text-xl font-semibold text-purple-400">
-          Github
-        </h3>
-     <p> <a
-      href="https://github.com/Shivamh-018L"
-      target="_blank"
-      rel="noreferrer"
-      className="text-blue-400 hover:underline"
-    >
-      github.com/Shivamh-018
-    </a>
-          
-      </p>  
-      </div>
+                <h3 className="text-purple-400 text-xl font-semibold">GitHub</h3>
+                <a
+                  href="https://github.com/Shivamh-018"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-400 hover:underline"
+                >
+                  github.com/Shivamh-018
+                </a>
+              </div>
 
-      <div>
-  <h3 className="text-xl font-semibold text-cyan-400">
-    LinkedIn
-  </h3>
+              <div>
+                <h3 className="text-cyan-400 text-xl font-semibold">LinkedIn</h3>
+                <a
+                  href="https://linkedin.com/in/shivam-honrao-018"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-400 hover:underline"
+                >
+                  linkedin.com/in/shivam-honrao-018
+                </a>
+              </div>
 
-  <p>
-    <a
-      href="YOUR_LINKEDIN_URL"
-      target="_blank"
-      rel="noreferrer"
-      className="text-blue-400 hover:underline"
-    >
-      linkedin.com/in/shivam-honrao-018
-    </a>
-  </p>
-</div>
 
       <div>
         <h3 className="text-xl font-semibold text-yellow-400">
