@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
 
@@ -9,50 +12,101 @@ function App() {
 
       <div className="max-w-7xl mx-auto px-6">
 
+        
         {/* Navbar */}
-        <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md flex justify-between items-center py-6">
+<nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md flex justify-between items-center py-6">
 
-          <h1 className="text-2xl font-bold text-blue-400">
-            <motion.span
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{
-    duration: 2,
-    repeat: Infinity,
-    repeatType: "reverse"
-  }}
->
-  Shivam Honrao
-</motion.span>
-          </h1>
+  <h1 className="text-2xl font-bold text-blue-400">
+    <motion.span
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "reverse"
+      }}
+    >
+      Shivam Honrao
+    </motion.span>
+  </h1>
 
-          <div className="hidden md:flex gap-8 text-lg">
-            <a href="#" className="hover:text-blue-400 transition">
-              Home
-            </a>
+  {/* Desktop Menu */}
+  <div className="hidden md:flex gap-8 text-lg">
+    <a href="#" className="hover:text-blue-400 transition">
+      Home
+    </a>
 
-            <a href="#about" className="hover:text-blue-400 transition">
-              About
-            </a>
+    <a href="#about" className="hover:text-blue-400 transition">
+      About
+    </a>
 
-            <a href="#skills" className="hover:text-blue-400 transition">
-              Skills
-            </a>
+    <a href="#skills" className="hover:text-blue-400 transition">
+      Skills
+    </a>
 
-           <a
-           href="#projects" className="hover:text-blue-400 transition">
-            Projects
-          </a>
+    <a href="#projects" className="hover:text-blue-400 transition">
+      Projects
+    </a>
 
-            <a
-           href="#contact" className="hover:text-blue-400 transition">
-           Contact Me
-            </a>
+    <a href="#contact" className="hover:text-blue-400 transition">
+      Contact Me
+    </a>
+  </div>
 
-          </div>
-          
+  {/* Mobile Menu Button */}
+  <button
+    className="md:hidden text-2xl text-blue-400"
+    onClick={() => setMenuOpen(!menuOpen)}
+  >
+    {menuOpen ? <FaTimes /> : <FaBars />}
+  </button>
+  {/* Mobile Menu */}
+{menuOpen && (
+  <div className="absolute top-20 right-0 w-52 bg-gray-900 border border-gray-800 rounded-xl shadow-2xl p-5 flex flex-col gap-5 text-center z-50">
 
-        </nav>
+    <a
+      href="#"
+      onClick={() => setMenuOpen(false)}
+      className="hover:text-blue-400 transition duration-300"
+    >
+      Home
+    </a>
+
+    <a
+      href="#about"
+      onClick={() => setMenuOpen(false)}
+      className="hover:text-blue-400 transition duration-300"
+    >
+      About
+    </a>
+
+    <a
+      href="#skills"
+      onClick={() => setMenuOpen(false)}
+      className="hover:text-blue-400 transition duration-300"
+    >
+      Skills
+    </a>
+
+    <a
+      href="#projects"
+      onClick={() => setMenuOpen(false)}
+     className="hover:text-blue-400 transition duration-300"
+    >
+      Projects
+    </a>
+
+    <a
+      href="#contact"
+      onClick={() => setMenuOpen(false)}
+     className="hover:text-blue-400 transition duration-300"
+    >
+      Contact Me
+    </a>
+
+  </div>
+)}
+</nav>
 
         {/* Hero Section */}
         <section className="grid md:grid-cols-2 items-center min-h-[80vh] gap-10">
@@ -79,8 +133,8 @@ function App() {
             </p>
 
             <div className="mt-8 flex gap-4 flex-wrap">
-
-             <div className="mt-8 flex gap-4 flex-wrap">
+       <div className="mt-8 flex gap-4 flex-wrap">
+       
 
   <a
     href="#projects"
@@ -127,7 +181,7 @@ function App() {
         </section>
         {/* About Section */}
 
-<section id="about" className="py-24">
+<section id="about" className="py-24 scroll-mt-24">
 
   <h2 className="text-4xl font-bold text-center mb-12">
     About Me
@@ -201,7 +255,7 @@ function App() {
 
 
     {/*Skill Section*/}
-<section id="skills" className="py-24">
+<section id="skills" className="py-24 scroll-mt-24">
 
   <h2 className="text-4xl font-bold text-center mb-12">
     Skills & Expertise
@@ -265,7 +319,7 @@ function App() {
 
 </section>
 
-<section id="projects" className="py-24">
+<section id="projects" className="py-24 scroll-mt-24">
 
   <h2 className="text-4xl font-bold text-center mb-12">
     Projects
@@ -345,7 +399,7 @@ function App() {
 
 </section>
 
-<section id="contact" className="py-24">
+<section id="contact" className="py-24 scroll-mt-24">
 
   <h2 className="text-4xl font-bold text-center mb-12">
     Contact Me
