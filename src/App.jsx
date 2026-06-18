@@ -192,41 +192,37 @@ const sendEmail = (e) => {
   >
     Download Resume
   </a>
-  <a
-  href="https://www.linkedin.com/in/shivam-honrao018/"
-  target="_blank"
-  rel="noreferrer"
-  className="bg-blue-700 hover:bg-blue-800 px-6 py-3 rounded-lg transition duration-300"
->
-  LinkedIn
-</a><div className="flex gap-6 mt-6 text-3xl">
-
-  <a
-    href="https://github.com/Shivamh-018"
-    target="_blank"
-    rel="noreferrer"
-    className="text-gray-400 hover:text-white"
-  >
-    <FaGithub />
-  </a>
+  
+<div className="flex flex-wrap gap-4 mt-6">
 
   <a
     href="https://www.linkedin.com/in/shivam-honrao018/"
     target="_blank"
     rel="noreferrer"
-    className="text-blue-400 hover:text-blue-500"
+    className="flex items-center gap-2 bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition"
   >
     <FaLinkedin />
+    <span>LinkedIn</span>
+  </a>
+  <a
+    href="https://github.com/Shivamh-018"
+    target="_blank"
+    rel="noreferrer"
+    className="flex items-center gap-2 bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-800 transition"
+  >
+    <FaGithub />
+    <span>GitHub</span>
   </a>
 
   <a
     href="mailto:shivamhonrao5580@gmail.com"
-    className="text-red-400 hover:text-red-500"
+    className="flex items-center gap-2 bg-red-600 px-4 py-2 rounded-lg hover:bg-red-700 transition"
   >
     <FaEnvelope />
+    <span>Email</span>
   </a>
 
-   </div>
+</div>
 </div>
 
 </div>
