@@ -40,7 +40,7 @@ const sendEmail = (e) => {
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 blur-3xl pointer-events-none"></div>
 
-<div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl pointer-events-none"></div>
+<div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl pointer-events-none"></div>C
 
       <div className="max-w-7xl mx-auto px-6">
 
@@ -541,44 +541,41 @@ const sendEmail = (e) => {
     {/* Right Side Form */}
 
     <form
-     
   ref={form}
   onSubmit={sendEmail}
   className="relative z-20 bg-gray-900 p-8 rounded-2xl space-y-5"
 >
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+    className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 outline-none"
+  />
 
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        required
-        className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 outline-none"
-      />
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    required
+    className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 outline-none"
+  />
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        required
-        className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 outline-none"
-      />
+  <textarea
+    name="message"
+    rows="6"
+    placeholder="Your Message"
+    required
+    className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 outline-none"
+  ></textarea>
 
-      <textarea
-        name="message"
-        rows="6"
-        placeholder="Your Message"
-        required
-        className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 outline-none"
-      ></textarea>
-<button
-  type="button"
-  onClick={() => alert("Button Working")}
-  className="w-full bg-red-500 py-3 rounded-lg"
->
-  Test Button
-</button>
-
-    </form>
+  <button
+    type="submit"
+    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 py-3 rounded-lg font-semibold hover:scale-105 transition duration-300 cursor-pointer"
+  >
+    Send Message 🚀
+  </button>
+</form>
 
   </div>
 
