@@ -238,7 +238,7 @@ const sendEmail = (e) => {
 
             <div className="w-80 h-80 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-1 shadow-2xl animate-pulse">
 
-              <div className="w-full h-full object-cover hover:scale-110 transition duration-500">
+              <div className="w-full h-full rounded-full overflow-hidden bg-gray-900">
   <img
     src={profile}
     alt="Shivam Honrao"
