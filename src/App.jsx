@@ -1,3 +1,4 @@
+import profile from "./assets/profile.jpg";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import React, { useState, useRef } from "react";
@@ -237,9 +238,13 @@ const sendEmail = (e) => {
 
             <div className="w-80 h-80 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-1 shadow-2xl animate-pulse">
 
-              <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-8xl">
-                👨‍💻
-              </div>
+              <div className="w-full h-full rounded-full overflow-hidden bg-gray-900">
+  <img
+    src={profile}
+    alt="Shivam Honrao"
+    className="w-full h-full object-cover"
+  />
+</div>
 
             </div>
 
