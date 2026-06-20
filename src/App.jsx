@@ -1,6 +1,7 @@
-import profile from "./assets/profile.jpg";
+
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import profile from "./assets/profile.jpg";
 import React, { useState, useRef } from "react";
 import {
   FaBars,
@@ -41,7 +42,7 @@ const sendEmail = (e) => {
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 blur-3xl pointer-events-none"></div>
 
-<div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl pointer-events-none"></div>C
+<div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6">
 
